@@ -17,10 +17,34 @@ test_input = '104	240	147	246	123	175	372	71	116	230	260	118	202	270	277	292
 
 # @param input [String]
 def day02_a(input)
-
+  ret = 0
+  input.each_line do |line|
+    numbers = line.split.map(&:to_i)
+    min, max = numbers.minmax
+    ret += (max - min)
+  end
+  ret
 end
 
 
+# @param input [String]
+def day02_b(input)
+  ret = 0 
+  input.each_line do |line|
+    # @type [Array]
+    numbers = line.split.map(&:to_i)
+    numbers.permutation(2).each do
+      |x, y|
+      if x % y == 0
+        ret += x / y
+        break
+      end
+    end
+  end
+  ret
+end
+
 if __FILE__ == $0
   puts day02_a test_input
+  puts day02_b test_input
 end

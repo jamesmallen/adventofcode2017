@@ -23,5 +23,5 @@ end
 
 if __FILE__ == $0
   puts day01_a test_input
-  puts day01_b test_input
+  puts day01_b   test_input
 end

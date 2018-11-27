@@ -1,5 +1,5 @@
 require 'rspec'
-require '../lib/day01'
+require 'day01'
 
 describe 'day01_a' do
   it 'does example 1 (1122 -> 3)' do
